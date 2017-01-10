@@ -1,0 +1,8 @@
+{
+    "name": "zigbee",
+    "version": "0.1.1",
+    "description": "ZigBee communication driver for Ruff",
+    "author": "Soros Liu",
+    "license": "MIT",
+    "main": "src/index.js"
+}
