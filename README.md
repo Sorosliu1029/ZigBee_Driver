@@ -55,6 +55,66 @@ Enable toggling-light function by setting an event listener.
 
 Remove all saved device.
 
+## FAQ
+1. How to configure router board?
+
+    Because there is no GPIO and other interfaces on common routers, so we need to configure `ruff_modules/ruff-mbd-v1/board.json` to the following json content:
+
+    ```json
+    {
+        "version": "2.0",
+        "id": "ruff-mbd-v1",
+        "model": "ruff-mbd-v1",
+        "preloads": {
+            "uart-0": "uart-0/uart"
+        },
+        "outputs": {
+            "uart-0": "uart-0/uart",
+            "gnd-0": "ground/gnd-0",
+            "vdd-0": "power/vdd-0"
+        },
+        "devices": [
+            {
+                "id": "ground",
+                "outputs": {
+                    "gnd-0": {
+                        "type": "ground"
+                    }
+                }
+            },
+            {
+                "id": "power",
+                "outputs": {
+                    "vdd-0": {
+                        "type": "power",
+                        "args": {
+                            "voltage": "3.3v"
+                        }
+                    }
+                }
+            },
+            {
+                "id": "uart-0",
+                "model": "ruff-sys-uart",
+                "driver": "sys-uart",
+                "inputs": {
+                    "device": {
+                        "type": "string",
+                        "args": {
+                            "path": "/dev/ttyUSB0"
+                        }
+                    }
+                },
+                "outputs": {
+                    "uart" : {
+                        "type":"uart"
+                    }
+                }
+            }
+        ]
+}
+```
+
 ## Contributing
 
 Contributions to this project are warmly welcome. But before you open a pull request, please make sure your changes are passing code linting and tests.
