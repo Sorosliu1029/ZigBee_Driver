@@ -26,7 +26,10 @@ module.exports = driver({
         })
     },
 
-    detach: function () {},
+    detach: function () {
+        this.zigbee.removeAllListeners();
+        this.zigbee.writeDeviceList();
+    },
 
     exports: {
         _initUart: function () {
@@ -59,14 +62,6 @@ module.exports = driver({
 
         setToggleLight: function () {
             this.zigbee.setToggleLight();
-        },
-
-        removeAllListeners: function () {
-            this.zigbee.removeAllListeners();
-        },
-
-        writeDeviceList: function () {
-            this.zigbee.writeDeviceList();
         },
 
         resetDeviceList: function () {

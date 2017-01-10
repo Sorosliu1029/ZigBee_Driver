@@ -4,5 +4,17 @@
     "description": "ZigBee communication driver for Ruff",
     "author": "Soros Liu",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Sorosliu1029/ZigBee_Driver.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Sorosliu1029/ZigBee_Driver/issues"
+    },
+    "homepage": "https://github.com/Sorosliu1029/ZigBee_Driver",
+    "keywords": [
+        "ruff",
+        "driver"
+    ],
     "main": "src/index.js"
 }
