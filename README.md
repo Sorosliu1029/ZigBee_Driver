@@ -17,7 +17,7 @@ Execute following command and enter a **supported model** to install.
 rap device add <device-id>
 
 # Then enter a supported model, for example:
-# ? model: {zigbee}
+# ? model: {jn5168a}
 ```
 
 Other possible steps involved if any.
