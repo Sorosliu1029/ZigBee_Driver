@@ -117,7 +117,6 @@ ZigBee.prototype.listDevices = function () {}
 
 ZigBee.prototype.startup = function () {
   this.reset();
-  this._emitter.emit('read raw data');
   this.getVersion();
   this.setExtendedPANID();
   this.setChannelMask();
